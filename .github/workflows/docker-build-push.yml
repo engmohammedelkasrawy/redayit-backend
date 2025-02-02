@@ -1,0 +1,35 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - dev  # Trigger the workflow on pushes to the main branch
+  pull_request:
+    branches:
+      - dev  # Trigger the workflow on pull requests to the main branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      # Build and push the Docker image with build number tag
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_HUB_USERNAME }}/redayit-backend:latest
+            ${{ secrets.DOCKER_HUB_USERNAME }}/redayit-backend:${{ github.run_number }}

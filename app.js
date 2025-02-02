@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;
 
 // Load Environment Variables
 const APP_NAME = process.env.APP_NAME || 'Redayit';
@@ -92,6 +92,6 @@ app.get('/', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0',() => {
     console.log(`Server running on http://localhost:${PORT} for environment: ${ENV}`);
 });
