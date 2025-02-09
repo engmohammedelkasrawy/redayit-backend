@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "APP_NAME=Redayit" >> .env
           echo "NODE_ENV=${{ secrets.NODE_ENV }}" >> .env
-          echo "DB_HOST=mongodb" >> .env
+          echo "DB_HOST=localhost" >> .env
           echo "DB_PORT=27017" >> .env
           echo "DB_USER=${{ secrets.DB_USER }}" >> .env
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
