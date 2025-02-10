@@ -9,7 +9,7 @@ const PORT =  process.env.PORT || 3000;
 // Load Environment Variables
 const APP_NAME = process.env.APP_NAME || 'Redayit';
 const ENV = process.env.NODE_ENV || 'dev';
-const DB_HOST = process.env.DB_HOST || 'localhost';
+const DB_HOST = process.env.DB_HOST || 'mongodb';
 const DB_PORT = process.env.DB_PORT || '27017';
 const DB_NAME = `${APP_NAME.toLowerCase()}_${ENV}`;
 const DB_USER = process.env.DB_USER;
