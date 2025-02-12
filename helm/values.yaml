@@ -3,5 +3,5 @@ replicaCount: 1
 
 image:
   repository: mohammedmamdouh193/redayit-backend  # Replace with your Docker image
-  tag: latest
+  tag: "13284715067"
 
