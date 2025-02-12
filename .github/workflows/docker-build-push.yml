@@ -49,6 +49,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.TOKEN }}
           
     - name: Update tag in Helm chart
       run: |
@@ -61,3 +63,4 @@ jobs:
         git add helm/values.yaml
         git commit -m "Update tag in Helm chart"
         git push
+  
