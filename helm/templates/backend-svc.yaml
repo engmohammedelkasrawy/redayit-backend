@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redayit-backend-service
+  namespace: redayit-backend
+spec:
+  type: ClusterIP
+  selector:
+    app: redayit-backend
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redayit-backend-ingress
+  namespace: redayit-backend
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+#     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+#     nginx.ingress.kubernetes.io/ssl-passthrough: "true" 
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: redayit-backend-service
+            port:
+              number: 3000
+    host: redaybe.local
+
+
+#tls:
+#- hosts:
+#  - argo.local
+#  secretName: argocd-server-tls 
