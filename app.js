@@ -88,7 +88,7 @@ app.delete(`/api/${COLLECTION_NAME}/:id`, async (req, res) => {
 
 // Root Route
 app.get('/', (req, res) => {
-    res.send('Welcome to the Redayit V5 App!');
+    res.send('Welcome to the Redayit V6 App!');
 });
 
 // Start Server
