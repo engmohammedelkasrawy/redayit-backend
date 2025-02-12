@@ -17,7 +17,7 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const COLLECTION_NAME = `${APP_NAME.toLowerCase()}_${ENV}_todos`;
 
 // Enable CORS for React app
-app.use(cors({ origin: 'http://localhost:3001' })); // Make sure this matches your React app URL
+app.use(cors({ origin: 'http://redayfe.local' })); // Make sure this matches your React app URL
 // Middleware
 app.use(bodyParser.json());
 
